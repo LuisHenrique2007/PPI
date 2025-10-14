@@ -7,7 +7,7 @@
 		public $conn;
         
 		public function conectar(): mysqli{
-			$this->conn= new mysqli($this->host, $this->usuario, $this->senha, $this->banco);
+			$this->conn= new mysqli($this->host, $this->user, $this->senha, $this->banco);
 
 			if($this->conn->connect_error){
 
