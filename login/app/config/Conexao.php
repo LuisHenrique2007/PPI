@@ -1,13 +1,18 @@
 <?php
+class Conexao{
+private $host="localhost";
+private $usuario="root";
+private $senha='';
+private $banco="login";
 
-$host="localhost";
-$usuario="root";
-$senha='';
-$banco="login";
+public $conn;
+public function conectar(){
+    $this->conn =new mysqli($this->host,$this->usuario,$this->senha,$this->banco);
 
-$mysqli =new mysqli($host,$usuario,$senha,$banco);
-
-if($mysqli->connect_error){
-    die ('não deu certo :(');
+if($this->conn->connect_error){
+    die ('não deu certo conectar ao banco :(');
+}
+return $this->conn;
+}
 }
 ?>
