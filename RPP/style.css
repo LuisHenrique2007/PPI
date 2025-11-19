@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.logo{
+    position:absolute;
+    left: 61%;
+    top: 17%;
+}
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff4500, #ff8c00);
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+}
+
+a:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 1em;
+}
+
+a.clicked::before {
+    width: 300%;
+    height: 300%;
+}
+
+
+.subject-list a {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.subject-list a:hover {
+    background: #218838;
+}
+
+.timer {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+#question-container {
+    margin: 20px;
+    font-size: 18px;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+a:visited:hover {
+    background-color: #007bff;
+}
+
+button:hover {
+    background: #0056b3;
+}
+#options button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+@media (max-width: 600px) {
+    .subject-list a {
+        width: 100%;
+    }
+}
+.da{
+    position: absolute;
+    left: 60%;
+}
+.ga{
+    position: absolute;
+    left: 45%;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Test</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1em;
+            font-size: 24px;
+        }
+
+        .timer {
+            font-size: 20px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        #question-container {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        #options button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="subject-title">English Test</h1>
+    </header>
+    <main>
+        <img src="logo.jpeg" width="100px">
+        <div class="ga">birdão</div>
+        <div class="timer">Time Left: <span id="time">60</span> sec</div>
+        <div id="question-container">
+            <p id="question">Loading question...</p>
+            <div id="options"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
