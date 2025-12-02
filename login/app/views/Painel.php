@@ -1,5 +1,6 @@
 <?php
 include ("Index.php");
+$_GET['action']="dentro";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +11,6 @@ include ("Index.php");
 </head>
 <body>
     <h1>bem-vindo ao painel,</h1> <?php echo $_SESSION['nome'];?>
-    <p><a href="principal.php">Sair</a></p>
+    <p><a href="index.php?action=desligar">Sair</a></p>
 </body>
 </html>

@@ -9,7 +9,7 @@ class Controlador{
     public function login(){
         $TestarLogin=$this->tarefaModel->login();
         if(isset($TestarLogin)){
-        include __DIR__ . '/../views/Painel.php';
+        header("Location: Painel.php");
         }else {
             echo "falha ao logar";
         }
