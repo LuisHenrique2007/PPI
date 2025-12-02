@@ -8,6 +8,8 @@ if(!isset($_SESSION['id'])){
     não está logado. <p> <a href=\"index.php\">ENTRAR</a></p>");
 } else{
         $id = $_SESSION["id"];
+        $nota=$_POST['nota'];
+        echo $nota;
     }
 ?>
 <!DOCTYPE html>

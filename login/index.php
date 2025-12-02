@@ -10,8 +10,6 @@ switch($action){
     case 'desligar':
         $controlador->desligar();
         break;
-    case "dentro":
-        $controlador->existeSessao();
     default:
         $controlador->entrar();
     break;

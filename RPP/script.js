@@ -122,12 +122,8 @@ function checkAnswer(selected, correct) {
 
 function finishQuiz() {
     clearInterval(timer);
-    alert(`Test completed! You got ${correctAnswers} out of ${quiz.length}`);
-
     localStorage.clear();
-    window.location.href = "principal.php?subject="+subject+",nota="+correctAnswers*2;
+    window.location.href = "principal.html?subject="+subject+",nota="+correctAnswers*2;
 }
-
-
 startTimer();
 loadQuestion();

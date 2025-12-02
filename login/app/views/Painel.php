@@ -1,7 +1,3 @@
-<?php
-include ("Index.php");
-$_GET['action']="dentro";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
