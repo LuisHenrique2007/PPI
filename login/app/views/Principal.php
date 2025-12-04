@@ -8,7 +8,10 @@
 </head>
 <body>
     <h1>Acesse sua conta</h1>
-    <form action="index.php?action=login" method="POST">
+    <?php
+    //O usuário vai ver Acesse sua conta, como título; 2 campos de texto, um escrito email e outro escrito nome. Após o usuário escrever, o código chama o POST e manda ao index
+    ?>
+    <form action="Index.php?action=login" method="POST">
         <p>
             <label>E-mail</label>
             <input type="text" name="email">
