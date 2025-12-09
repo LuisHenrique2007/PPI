@@ -1,3 +1,4 @@
+
 const urlParams = new URLSearchParams(window.location.search);
 const subject = urlParams.get('subject');
 document.getElementById('subject-title').textContent = subject.toUpperCase() + " TEST";
@@ -123,7 +124,7 @@ function checkAnswer(selected, correct) {
 function finishQuiz() {
     clearInterval(timer);
     localStorage.clear();
-    window.location.href = "principal.html?subject="+subject+",nota="+correctAnswers*2;
+    window.location.href="principal.php?n"+subject+"="+correctAnswers*2;
 }
 startTimer();
 loadQuestion();
