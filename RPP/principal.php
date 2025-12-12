@@ -7,7 +7,7 @@ if(!isset($_SESSION['id'])){
     die ("Você não pode acessar esta página porque 
     não está logado. <p> <a href=\"index.php\">ENTRAR</a></p>");
 } else {
-    if(isset($_SERVER['QUERY_STRING'])){
+    if(str_contains($_SERVER['QUERY_STRING'],"nvocabulary=")|| str_contains($_SERVER['QUERY_STRING'],"ngrammar=")||str_contains($_SERVER['QUERY_STRING'],"nreading=")){
     $sql="UPDATE aluno SET ". $_SERVER['QUERY_STRING'];
     $notas=$conectar->query($sql);
 
@@ -39,9 +39,9 @@ if(!isset($_SESSION['id'])){
         <div class="subject-list">
             <img class="logo" src="logo.jpeg" width="50px">
             <div class="da">birdão</div>
-            <a href="vocabulary.html">Vocabulary</a> <div>notaV=<?php echo $_SESSION['nvocabulary'];?><div>
-            <a href="grammar.html">Grammar</a><div>notaG=<?php echo $_SESSION['ngrammar']?></div>
-            <a href="reading.html">Reading</a><div>notaR=<?php echo $_SESSION['nreading'];?></div>
+            <a href="vocabulary.html">Vocabulary nota=<?php echo $_SESSION['nvocabulary'];?></a> 
+            <a href="grammar.html">Grammar nota=<?php echo $_SESSION['ngrammar']?></a>
+            <a href="reading.html">Reading nota=<?php echo $_SESSION['nreading'];?></a>
         </div>
     </main>
 </body>
