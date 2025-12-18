@@ -28,7 +28,9 @@ if(!isset($_SESSION['id'])){
     </form>
 
     <h2>Suas tarefas</h2>
-    <?php if (!empty($tarefas)): ?>
+    <?php if (!empty($tarefas)):
+        //lista as tarefas de uma em uma
+        ?>
         <ul>
             <?php foreach ($tarefas as $tarefa): ?>
                 <li>

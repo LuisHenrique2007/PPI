@@ -70,7 +70,7 @@ class Tarefa{
                 session_start(); 
             }
             $_SESSION['id'] = $usuario['id']; 
-            $_SESSION['senha'] = $usuario['senha'];
+            $_SESSION['nome'] = $usuario['nome'];
             
             return $_SESSION['id'];
         }else{
@@ -78,15 +78,16 @@ class Tarefa{
             return null;
         }
 }
+        ##testa se já existe alguém com essas credenciais
     public function cadastro($e,$s){
             $email = $this->conn->real_escape_string($e);
             $senha = $this->conn->real_escape_string($s); 
-
-            $sql = "SELECT * FROM usuarios WHERE email = '$email' AND senha = $senha";
+            $sql = "SELECT * FROM usuarios WHERE email = '$email' AND nome = '$senha'";
             return $this->conn->query($sql);
     }
+    //cria um novo usuário
     public function inserir($email,$senha){
-        $sql="INSERT into usuarios(email, senha) values('$email','$senha')";
+        $sql="INSERT INTO usuarios(email, nome) VALUES('$email','$senha')";
         return $this->conn->query($sql);
     }
 }
