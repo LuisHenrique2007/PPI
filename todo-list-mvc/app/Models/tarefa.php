@@ -55,7 +55,41 @@ class Tarefa{
         $resultado = $this->conn->query($sql);
         return $resultado->fetch_assoc();
     }
+    public function login($eml,$sha){
+        $email = $this->conn->real_escape_string($eml);
+        $senha = $this->conn->real_escape_string($sha); 
+        //login testa se essa sintaxe sql chama algo na tabela
+        $sql = "SELECT * FROM usuarios WHERE email = '$email' AND nome = '$senha'";
 
+        $lista_usuarios = $this->conn->query($sql); 
+        //se chamar, então começa uma sessão com nome e id, voltando id
+        $quantidade  = $lista_usuarios->num_rows;
+        if($quantidade > 0){
+            $usuario = $lista_usuarios->fetch_assoc(); 
+            if(!isset($_SESSION)){
+                session_start(); 
+            }
+            $_SESSION['id'] = $usuario['id']; 
+            $_SESSION['senha'] = $usuario['senha'];
+            
+            return $_SESSION['id'];
+        }else{
+            //senão volta nada
+            return null;
+        }
 }
+    public function cadastro($e,$s){
+            $email = $this->conn->real_escape_string($e);
+            $senha = $this->conn->real_escape_string($s); 
+
+            $sql = "SELECT * FROM usuarios WHERE email = '$email' AND senha = $senha";
+            return $this->conn->query($sql);
+    }
+    public function inserir($email,$senha){
+        $sql="INSERT into usuarios(email, senha) values('$email','$senha')";
+        return $this->conn->query($sql);
+    }
+}
+    
 
 ?>

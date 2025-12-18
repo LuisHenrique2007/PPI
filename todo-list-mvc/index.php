@@ -18,8 +18,16 @@ switch ($action) {
     case 'atualizar':
         $controller->atualizar();
         break;
+    case 'login':
+        $controller->login();
+        break;
+    case 'cadastro':
+        $controller->direcaoCadastro();
+        break;
+    case 'cadastrar':
+        $controller->cadastrar();
     default:
-        $controller->listarAtivas();
+        $controller->telaIndex();
         break;
 }
 
